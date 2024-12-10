@@ -1,0 +1,12 @@
+version: '3'
+services:
+  patern:
+    build: .
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules  # To prevent overwriting node_modules if installed in the container
+    ports:
+      - "3001:3001"
+    restart: always
+    environment:
+      - NODE_ENV=development
